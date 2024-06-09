@@ -1,7 +1,7 @@
 .export Main
 .segment "CODE"
 .proc Main
-	lda #00
+	lda #03
 	sta $41
 
 	lda #$28
@@ -14,12 +14,12 @@
 	sta $44
 
 	lda #00
-	ldx $41
+    tax 
 
 	clc
 	Loop:
+		adc $42,X
 		inx
-		adc $41,X
         cpx #03
 		bne Loop
 	sta $40

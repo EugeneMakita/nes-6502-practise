@@ -21,16 +21,15 @@
     clc
     Add: 
         adc $43,X
-        bcs Upper
+        bcc AddUpperBits
+        iny
+    AddUpperBits:
         inx
         cpx $42
         bne Add
+
     sta $40
     sty $41
-    rts
 
-    Upper:
-        iny
-        jmp Add
     rts
 .endproc

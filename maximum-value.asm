@@ -28,12 +28,10 @@
 		cmp $41,X
         bcs Smaller
 	lda $41,X 
-	sta $40 
 	Smaller:
 		inx
 		cpx #06
 		bne Loop
-
-
+	sta $40 
 	rts
 .endproc

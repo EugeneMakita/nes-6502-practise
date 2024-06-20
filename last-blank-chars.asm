@@ -20,10 +20,10 @@
 	lda #$20
 	sta $47
 
-	lda #$20
+	lda #$53
 	sta $48
 
-	lda #$54
+	lda #$20
 	sta $49
 
 	lda #$0D
@@ -39,10 +39,12 @@
 		beq Count
 		cmp #$0D
 		beq end
-		iny
+		txa
+		tay
 		Count:
 			jmp FindLastChar
 		end:
+			dey
 			sty $40
 	rts
 .endproc
